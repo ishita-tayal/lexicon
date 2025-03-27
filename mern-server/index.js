@@ -14,7 +14,6 @@ app.get('/', (req, res) => {
 
 // mongodb configuration
 
-
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = process.env.MONGO_URI;
 
@@ -27,15 +26,30 @@ const client = new MongoClient(uri, {
     }
 });
 
+// create a collection of documents
+const bookCollections = client.db("BookInventory").collection("books");
+// insert a book to the db: post method
+app.post("/upload-book", async (req, res) => {
+    const data = req.body;
+    const result = await bookCollections.insertOne(data);
+    res.send(result);
+})
+
+app.get("/all-books", async (req, res) => {
+    const result = await bookCollections.find({}).toArray();
+    res.send(result);
+})
+
 async function run() {
     try {
         // Connect the client to the server	(optional starting in v4.7)
         await client.connect();
 
-
         // Send a ping to confirm a successful connection
         await client.db("admin").command({ ping: 1 });
         console.log("Pinged your deployment. You successfully connected to MongoDB!");
+
+
     } finally {
         // Ensures that the client will close when you finish/error
         // await client.close();
