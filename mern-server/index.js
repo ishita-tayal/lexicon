@@ -67,6 +67,16 @@ app.delete("/book/:id", async (req, res) => {
     res.send(result);
 })
 
+// find by category
+app.get("/all-books", async (req, res) => {
+    let query = {};
+    if (req.query?.category) {
+        query = { category: req.query.category }
+    }
+    const result = await bookCollections.find(query).toArray();
+    res.send(result);
+})
+
 async function run() {
     try {
         // Connect the client to the server	(optional starting in v4.7)
