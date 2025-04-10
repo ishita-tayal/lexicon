@@ -6,8 +6,8 @@ const Home = () => {
             <div className='h-screen'>
                 Home
             </div>
-            <div className='h-screen bg-red'>
-                hello
+            <div className='h-screen bg-red-500'>
+                hello hello
             </div>
         </div>
     )
