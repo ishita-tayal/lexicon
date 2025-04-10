@@ -1,1 +1,1 @@
-# whispering-pages
+# lexicon
