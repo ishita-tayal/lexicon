@@ -9,7 +9,7 @@ const Banner = () => {
                 <div className='space-y-8 md:w-1/2 h-full'>
                     <h2 className='text-5xl font-bold leading-snug text-black'>Buy and Sell Your Books
                         <span className='text-blue-700'> for the Best Prices</span></h2>
-                    <p className='md:w-4/5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat temporibus aperiam praesentium. Expedita eos atque blanditiis libero, molestias enim laudantium omnis quasi quibusdam inventore cupiditate earum. Sequi quia cum totam.</p>
+                    <p className='md:w-4/5'>Explore our vast library of new and pre-loved books across all genres. Whether you're buying your next adventure or selling your favorite classic, we've made it simple, fast, and secure.</p>
                     <div>
                         <input type='search' name='search' id='search' placeholder='Search a book' className='py-2 px-2 rounded-s-sm outline-none bg-white' />
                         <button className='bg-blue-700 px-6 py-2 text-white font-medium hover:bg-black transition-all ease-in duration-200'>Search</button>
