@@ -8,6 +8,8 @@ import 'swiper/css/pagination';
 
 // import './styles.css';
 
+import { FaStar } from 'react-icons/fa6'
+
 // import required modules
 import { Pagination } from 'swiper/modules';
 
@@ -40,7 +42,18 @@ const Reviews = () => {
                     modules={[Pagination]}
                     className="mySwiper"
                 >
-                    <SwiperSlide>Slide 1</SwiperSlide>
+                    <SwiperSlide>
+                        <div>
+                            <div className='text-amber-500 flex gap-2'>
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                            </div>
+
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dignissimos laborum quas doloremque illo atque in asperiores nostrum autem dolores, commodi exercitationem dicta facilis iste ullam placeat quidem, distinctio quis?</p>
+                        </div>
+                    </SwiperSlide>
                     <SwiperSlide>Slide 2</SwiperSlide>
                     <SwiperSlide>Slide 3</SwiperSlide>
                     <SwiperSlide>Slide 4</SwiperSlide>
