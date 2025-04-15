@@ -9,8 +9,6 @@ import 'swiper/css/pagination';
 // Import required modules
 import { Pagination } from 'swiper/modules';
 
-import { FaCartShopping } from 'react-icons/fa6';
-
 const BookCards = ({ headline, books }) => {
     return (
         <div className="my-16 px-4 lg:px-24">
@@ -34,23 +32,32 @@ const BookCards = ({ headline, books }) => {
                 >
                     {books.map((book) => (
                         <SwiperSlide key={book._id}>
-                            <Link to={`/book/${book._id}`}>
-                                <div className='relative'>
-                                    <img src={book.imageURL} alt={book.bookTitle} />
-                                    <div className='absolute top-3 right-3 bg-blue-600 hover:bg-black p-2 rounded'>
-                                        <FaCartShopping className='w-4 h-4 text-white' />
+                            <div className="flex flex-col h-full">
+                                <Link to={`/book/${book._id}`}>
+                                    <div className='relative'>
+                                        <img
+                                            src={book.imageURL}
+                                            alt={book.bookTitle}
+                                            className="rounded-md w-full h-64 object-cover"
+                                        />
+                                    </div>
+                                </Link>
+                                <div className='mt-2 text-center flex flex-col flex-grow'>
+                                    <h3 className="text-lg font-semibold">{book.bookTitle}</h3>
+                                    <p className="text-gray-600">{book.authorName}</p>
+                                    <p className="text-blue-700 font-semibold mt-1">₹300.00</p>
+                                    <div className='mt-auto'>
+                                        <a
+                                            href={book.bookPDFURL}
+                                            target='_blank'
+                                            rel='noopener noreferrer'
+                                            className='inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700'
+                                        >
+                                            Read Now
+                                        </a>
                                     </div>
                                 </div>
-                                <div>
-                                    <div>
-                                        <h3>{book.bookTitle}</h3>
-                                        <p>{book.authorName}</p>
-                                    </div>
-                                    <div>
-                                        <p>₹300.00</p>
-                                    </div>
-                                </div>
-                            </Link>
+                            </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>

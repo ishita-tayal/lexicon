@@ -7,12 +7,11 @@ import Home from "../home/Home";
 import Shop from "../shop/Shop";
 import About from "../components/About";
 import Blog from "../components/Blog";
-import SingleBook from "../shop/SingleBook";
 import DashboardLayout from "../dashboard/DashboardLayout";
 import Dashboard from "../dashboard/Dashboard";
-import UploadBook from "../dashboard/UploadBook";
-import ManageBooks from "../dashboard/ManageBooks";
-import EditBooks from "../dashboard/EditBooks";
+// import UploadBook from "../dashboard/UploadBook";
+// import ManageBooks from "../dashboard/ManageBooks";
+// import EditBooks from "../dashboard/EditBooks";
 
 const router = createBrowserRouter([
     {
@@ -36,11 +35,6 @@ const router = createBrowserRouter([
                 element: <Blog />
             },
             {
-                path: "/book/:id",
-                element: <SingleBook />,
-                loader: ({ params }) => fetch(`http://localhost:5000/book/${params.id}`)
-            },
-            {
                 path: "admin/dashboard",
                 element: <DashboardLayout />,
                 children: [
@@ -48,18 +42,18 @@ const router = createBrowserRouter([
                         path: 'true',
                         element: <Dashboard />
                     },
-                    {
-                        path: 'upload',
-                        element: <UploadBook />
-                    },
-                    {
-                        path: 'manage',
-                        element: <ManageBooks />
-                    },
-                    {
-                        path: 'edit-books/:id',
-                        element: <EditBooks />
-                    }
+                    // {
+                    //     path: 'upload',
+                    //     element: <UploadBook />
+                    // },
+                    // {
+                    //     path: 'manage',
+                    //     element: <ManageBooks />
+                    // },
+                    // {
+                    //     path: 'edit-books/:id',
+                    //     element: <EditBooks />
+                    // }
                 ]
             }
         ]
